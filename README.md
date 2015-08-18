@@ -21,8 +21,14 @@ Choose a stable/definitive connection you need to be connected to the edison via
   with a Servo
   
     http://cylonjs.com/documentation/drivers/servo/#how-to-use
-    
-    
+
+ 
+  how to use cylon on edison
+
+    http://cylonjs.com/documentation/platforms/edison/#how-to-use
+
+  also see the latest link (before python section start)
+  
 
 #### links & related projects notes: 
 
@@ -32,6 +38,42 @@ Choose a stable/definitive connection you need to be connected to the edison via
 
 Complete sketch (blockchain/bitcoin) oriented, has to be merged to Cylon.js code or import an arduino Servo library ( https://www.arduino.cc/en/Reference/Servo )
 
+Well done basic idea/guide is already the there:
+
+look at:
+
+### http://www.codefoster.com/edison-coding/
+
+servo code like:
+
+```js
+var Cylon = require('cylon');
+
+var action = Cylon.robot({
+  connections: {
+    arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }
+  },
+
+  devices: {
+    servo: { driver: 'servo', pin: 3 }
+  },
+
+  work: function(my) {
+    var angle = 45 
+    
+    my.servo.angle(0)       // set the servo to rotation degrees 0 (starting position)
+    setTimeout(function(){
+        my.servo.angle(45)  // set the servo to 45* rotation
+    }, 2000)
+    setTimeout(function(){
+        relayPin.write(0)   // set the servo to 0* rotation again
+    }, 6000)
+  }
+});
+
+// use this where you usually do pin.write(1), digitalWrite(x) etc..., this will trigger the work() function once
+action.start()
+```
 
 
 ---
