@@ -75,7 +75,19 @@ var action = Cylon.robot({
 action.start()
 ```
 
-also looj at J5 - Jhonny 5: http://johnny-five.io/#edison - Servo supported
+
+---
+
+### J5
+
+Also look at J5 - Jhonny 5: http://johnny-five.io/#edison - Servo supported
+
+awesome docs
+
+http://johnny-five.io/api/servo/
+
+http://johnny-five.io/examples/servo/
+
 
 
 ---
